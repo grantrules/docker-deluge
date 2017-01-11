@@ -14,7 +14,6 @@ if [ ! -z "${DELUGE_UID}" ]; then
   if [ ! "$(id -u deluge-web)" -eq "${DELUGE_UID}" ]; then
     # Change the UID and home
     usermod -o -u "${DELUGE_UID}" -d /config deluge-web
-    fi
   fi
 fi
 if [ ! -z "${DELUGE_GID}" ]; then
