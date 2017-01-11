@@ -1,0 +1,4 @@
+# Defaults for deluge-daemon initscript
+# sourced by /etc/init.d/deluge-daemon
+
+RUN_AT_STARTUP=YES
