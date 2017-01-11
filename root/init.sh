@@ -23,7 +23,7 @@ if [ ! -z "${DELUGE_GID}" ]; then
 fi
 
 # Update ownership of dirs we need to write to
-chown -R plex:plex /config
+chown -R deluge-web:deluge-web /config
 
 # Install the service
 update-rc.d deluge-daemon defaults
