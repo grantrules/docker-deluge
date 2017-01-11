@@ -2,7 +2,7 @@
 
 # If the first run completed successfully, we are done
 if [ -e /.firstRunComplete ]; then
-  echo "Deluge first run setup already done"
+  echo "Deluge setup already done"
   exit 0
 fi
 
@@ -30,4 +30,4 @@ update-rc.d deluge-daemon defaults
 
 # We're done here
 touch /.firstRunComplete
-echo "Deluge first run setup complete"
+echo "Deluge setup complete"
