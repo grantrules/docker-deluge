@@ -11,19 +11,19 @@ mkdir -p /config /data
 
 # Setup user/group ids
 if [ ! -z "${DELUGE_UID}" ]; then
-  if [ ! "$(id -u deluge-web)" -eq "${DELUGE_UID}" ]; then
+  if [ ! "$(id -u debian-deluged)" -eq "${DELUGE_UID}" ]; then
     # Change the UID and home
-    usermod -o -u "${DELUGE_UID}" -d /config deluge-web
+    usermod -o -u "${DELUGE_UID}" -d /config debian-deluged
   fi
 fi
 if [ ! -z "${DELUGE_GID}" ]; then
-  if [ ! "$(id -g deluge-web)" -eq "${DELUGE_GID}" ]; then
-    groupmod -o -g "${DELUGE_GID}" deluge-web
+  if [ ! "$(id -g debian-deluged)" -eq "${DELUGE_GID}" ]; then
+    groupmod -o -g "${DELUGE_GID}" debian-deluged
   fi
 fi
 
 # Update ownership of dirs we need to write to
-chown -R deluge-web:deluge-web /config
+chown -R debian-deluged:debian-deluged /config
 
 # Install the service
 update-rc.d deluge-daemon defaults
