@@ -1,33 +1,17 @@
-FROM ubuntu:latest
+FROM twanislas/base-alpine:latest
 MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
 
-# We don't want anything interactive
-ARG DEBIAN_FRONTEND="noninteractive"
-
-# Environment variables
-ENV PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
-
-# Update and get dependencies + cleanup
+# Add repos and install what we need
 RUN \
-    apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-      deluged \
-      deluge-web && \
-    apt-get -y autoremove && \
-    apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/* && \
-    rm -rf /var/tmp/*
+  echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+  apk upgrade --no-cache && \
+  apk add --no-cache py2-service_identity deluge@testing
 
 # Copy needed files
-COPY root/ /
-
-# Initial install
-RUN /init.sh
+COPY rootfs/ /
 
 # Ports
-EXPOSE 8112/tcp 58846/tcp 65001/tcp 65001/udp
+EXPOSE 8112/tcp 58846/tcp 53160/tcp 53160/udp
 
 # Volumes
 VOLUME /config /data
