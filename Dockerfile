@@ -5,7 +5,9 @@ MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
 RUN \
   echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
   apk upgrade --no-cache && \
-  apk add --no-cache py2-service_identity deluge@testing
+  apk add --no-cache py-pip deluge@testing && \
+  pip install -U pip && \
+  pip install service_identity attr
 
 # Copy needed files
 COPY rootfs/ /
