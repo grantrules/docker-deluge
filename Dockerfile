@@ -13,7 +13,7 @@ MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
           org.label-schema.vcs-url="https://github.com/Twanislas/docker-deluge" \
           org.label-schema.vendor="Antoine Rahier" \
           org.label-schema.version=$VERSION \
-          org.label-schema.schema-version="1.0"
+          org.label-schema.schema-version="1.0" \
 # FreeNAS labels
           org.freenas.autostart="true" \
           org.freenas.bridged="false" \
