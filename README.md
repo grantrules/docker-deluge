@@ -1,5 +1,5 @@
 # docker-deluge
-[![](https://images.microbadger.com/badges/image/twanislas/deluge.svg)](https://microbadger.com/images/twanislas/deluge) [![](https://images.microbadger.com/badges/commit/twanislas/deluge.svg)](https://github.com/Twanislas/docker-deluge) [![](https://img.shields.io/docker/pulls/twanislas/deluge.svg)](https://hub.docker.com/r/twanislas/deluge/) [![](https://img.shields.io/docker/stars/linuxserver/jackett.svg)](https://hub.docker.com/r/twanislas/deluge/)
+[![](https://images.microbadger.com/badges/image/twanislas/deluge.svg)](https://microbadger.com/images/twanislas/deluge) [![](https://images.microbadger.com/badges/commit/twanislas/deluge.svg)](https://github.com/Twanislas/docker-deluge) [![](https://img.shields.io/docker/pulls/twanislas/deluge.svg)](https://hub.docker.com/r/twanislas/deluge/) [![](https://img.shields.io/docker/stars/twanislas/deluge.svg)](https://hub.docker.com/r/twanislas/deluge/)
 
 Docker container for Deluge torrent client, based on latest Alpine Linux
 
