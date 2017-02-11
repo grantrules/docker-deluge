@@ -45,7 +45,7 @@ MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
           ]" \
           org.freenas.web-ui-protocol="http" \
           org.freenas.web-ui-port=8112 \
-          org.freenas.web-ui-path="" \
+          org.freenas.web-ui-path=""
 
 # Add repos and install what we need
 RUN \
