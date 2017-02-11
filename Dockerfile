@@ -1,10 +1,22 @@
 FROM twanislas/base-alpine:latest
 MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
+LABEL maintainer="Antoine Rahier <antoine.rahier@gmail.com>"
 
 # Build-time metadata
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
+LABEL org.label-schema.build-date="$BUILD_DATE" \
+      org.label-schema.name="docker-deluge" \
+      org.label-schema.description="Docker container for Deluge torrent client, based on latest Alpine Linux" \
+      org.label-schema.url="https://github.com/Twanislas/docker-deluge" \
+      org.label-schema.vcs-ref="$VCS_REF" \
+      org.label-schema.vcs-url="https://github.com/Twanislas/docker-deluge" \
+      org.label-schema.vendor="Antoine Rahier" \
+      org.label-schema.version="$VERSION" \
+      org.label-schema.schema-version="1.0"
+
+# FreeNAS metadata
 LABEL org.freenas.autostart="true" \
       org.freenas.bridged="false" \
       org.freenas.expose-ports-at-host="true" \
@@ -35,16 +47,7 @@ LABEL org.freenas.autostart="true" \
       ]" \
       org.freenas.web-ui-protocol="http" \
       org.freenas.web-ui-port=8112 \
-      org.freenas.web-ui-path="" \
-      org.label-schema.build-date="$BUILD_DATE" \
-      org.label-schema.name="docker-deluge" \
-      org.label-schema.description="Docker container for Deluge torrent client, based on latest Alpine Linux" \
-      org.label-schema.url="https://github.com/Twanislas/docker-deluge" \
-      org.label-schema.vcs-ref="$VCS_REF" \
-      org.label-schema.vcs-url="https://github.com/Twanislas/docker-deluge" \
-      org.label-schema.vendor="Antoine Rahier" \
-      org.label-schema.version="$VERSION" \
-      org.label-schema.schema-version="1.0"
+      org.freenas.web-ui-path=""
 
 # Add repos and install what we need
 RUN \
