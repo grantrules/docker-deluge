@@ -1,0 +1,6 @@
+#!/bin/bash
+# Taken and modified from http://windsock.io/automated-docker-image-builds-with-multiple-tags/
+
+# Tag each build as latest
+docker tag $IMAGE_NAME $DOCKER_REPO:latest
+docker push $DOCKER_REPO:latest
