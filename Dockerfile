@@ -14,6 +14,38 @@ MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
           org.label-schema.vendor="Antoine Rahier" \
           org.label-schema.version=$VERSION \
           org.label-schema.schema-version="1.0"
+# FreeNAS labels
+          org.freenas.autostart="true" \
+          org.freenas.bridged="false" \
+          org.freenas.expose-ports-at-host="true" \
+          org.freenas.port-mappings="8112:8112/tcp,53160:53160/tcp,53160:53160/udp" \
+          org.freenas.settings="[ \
+            { \
+                \"env\": \"DELUGE_UID\", \
+                \"descr\": \"User ID to run Deluge\", \
+                \"optional\": true \
+            }, \
+            { \
+                \"env\": \"DELUGE_GID\", \
+                \"descr\": \"Group ID to run Deluge\", \
+                \"optional\": true \
+            } \
+          ]" \
+          org.freenas.upgradeable="true" \
+          org.freenas.version=$VERSION \
+          org.freenas.volumes="[ \
+            { \
+                \"name\": \"/config\", \
+                \"descr\": \"Config volume/dataset\" \
+            }, \
+            { \
+                \"name\": \"/data\", \
+                \"descr\": \"Downloads volume/dataset\" \
+            } \
+          ]" \
+          org.freenas.web-ui-protocol="http" \
+          org.freenas.web-ui-port=8112 \
+          org.freenas.web-ui-path="" \
 
 # Add repos and install what we need
 RUN \
