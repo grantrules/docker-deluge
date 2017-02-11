@@ -22,7 +22,7 @@ twanislas/deluge
 ## Parameters
 - `-e DELUGE_UID=<user id>` The user id of the `deluge` user created inside the container. This will default to `2000` if you don't set it.
 - `-e DELUGE_GID=<group id>` The group id of the `deluge` group created inside the container. This will default to `2000` if you don't set it.
-- `-p ####:####` Forwards ports from the host to the container.
+- `-p <host port>:<container port>` Forwards ports from the host to the container.
   - `8112` Web interface port.
   - `58846` Daemon remote port. For example if you want to use the GTK application on your desktop to connect to the daemon running on another machine.
   - `53160` Incoming connections port (that's the one you want to forward in your router to be able to seed).
