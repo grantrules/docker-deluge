@@ -11,9 +11,6 @@ echo "Running Deluge first run setup..."
 addgroup -g ${DELUGE_GID:-2000} -S deluge
 adduser -h /config -s /sbin/nologin -G deluge -S -D -H -u ${DELUGE_UID:-2000} -k /dev/null deluge
 
-# Setup directories
-mkdir /config /data
-
 # Set some sane defaults if there's no config file yet
 if [ ! -f /config/core.conf ]; then
   cp /deluge-core.conf /config/core.conf
