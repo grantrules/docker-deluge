@@ -1,12 +1,17 @@
 #!/bin/bash
 
-if [[ "$DOCKER_TAG" =~ "^[0-9.]+$" ]]; then
+BUILD_SHA=`git rev-parse --short HEAD`
+BUILD_DATE=`date -u +"%Y%m%d%H%M"`
+
+if [[ "$DOCKER_TAG" =~ ^[0-9.]+.*$ ]]; then
   VERSION=$DOCKER_TAG
 else
-  VERSION=$DOCKER_TAG-`date -u +"%Y%m%d%H%M"`-`git rev-parse --short HEAD`
+  VERSION=$DOCKER_TAG-$BUILD_DATE-$BUILD_SHA
 fi
 
-docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-             --build-arg VCS_REF=`git rev-parse --short HEAD` \
+echo "Building $IMAGE_NAME at version $VERSION..."
+
+docker build --build-arg BUILD_DATE=$BUILD_DATE \
+             --build-arg VCS_REF=$BUILD_SHA \
              --build-arg VERSION=$VERSION \
              -t $IMAGE_NAME .
