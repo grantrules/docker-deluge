@@ -65,3 +65,6 @@ EXPOSE 8112/tcp 58846/tcp 53160/tcp 53160/udp
 
 # Volumes
 VOLUME /config /data
+
+# Health check
+HEALTHCHECK CMD curl --connect-timeout 15 --show-error --silent --fail --location "http://localhost:8112" > /dev/null || exit 1
