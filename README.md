@@ -18,6 +18,7 @@ docker run \
 -v <path/to/data/folder>:/data \
 twanislas/deluge
 ```
+Connect to your container on on port 8112 (`http://<container ip>:8112`), the default WebUI password is `deluge`. CHANGE IT !
 
 ## Parameters
 - `-e DELUGE_UID=<user id>` The user id of the `deluge` user created inside the container. This will default to `2000` if you don't set it.
