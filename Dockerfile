@@ -1,4 +1,4 @@
-FROM twanislas/base-alpine:latest
+FROM twanislas/base-alpine
 MAINTAINER Antoine Rahier <antoine.rahier@gmail.com>
 LABEL maintainer="Antoine Rahier <antoine.rahier@gmail.com>"
 
