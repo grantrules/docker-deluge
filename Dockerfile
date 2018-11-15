@@ -34,4 +34,5 @@ EXPOSE 58846/tcp 53160/tcp 53160/udp
 VOLUME /config /data
 
 # Health check
-#HEALTHCHECK CMD curl --connect-timeout 15 --show-error --silent --fail --location "http://localhost:8112" > /dev/null || exit 1
+HEALTHCHECK --interval=1m --timeout=3s \
+   CMD nc -z localhost 58846 || exit 1
