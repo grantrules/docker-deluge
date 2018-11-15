@@ -3,4 +3,4 @@
 echo "Starting Deluge Bittorrent Daemon."
 export PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
 umask 002
-exec s6-setuidgid deluge deluged -d -c /config -l /config/daemon.log -L warning
+exec s6-setuidgid deluge deluged -d -c /config -l /config/daemon.log -L debug
