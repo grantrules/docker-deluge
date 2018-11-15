@@ -1,6 +1,0 @@
-#!/usr/bin/with-contenv ash
-
-echo "Starting Deluge Bittorrent WebUI."
-export PYTHON_EGG_CACHE="/config/plugins/.python-eggs"
-umask 002
-exec s6-setuidgid deluge deluge-web -c /config -l /config/deluge-web.log -L warning

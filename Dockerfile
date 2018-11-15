@@ -33,6 +33,8 @@ EXPOSE 58846/tcp 53160/tcp 53160/udp
 # Volumes
 VOLUME /config /data
 
+ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/run_deluged.sh"]
+
 # Health check
 HEALTHCHECK --interval=1m --timeout=3s \
    CMD nc -z localhost 58846 || exit 1
