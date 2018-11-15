@@ -8,7 +8,7 @@ if [ ! -f /config/core.conf ]; then
   # TODO Add default config for deluge-web
 fi
 
-chown -R deluge:deluge /config /data
+#chown -R deluge:deluge /config /data
 
 
 #[[ "${DELUGE_UID:-""}" =~ ^[0-9]+$ ]] && usermod -u $DELUGE_UID -o deluge
