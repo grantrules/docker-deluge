@@ -1,4 +1,4 @@
-FROM twanislas/base-alpine
+FROM alpine:edge
 MAINTAINER Grant Harding <grant@careers.bike>
 LABEL maintainer="Grant Harding <grant@careers.bike>"
 
